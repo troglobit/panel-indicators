@@ -28,7 +28,6 @@ const CustomButton = Extension.imports.indicators.button.CustomButton;
 
 var PANEL_ICON_SIZE = 16;
 
-
 var UserIndicator = new Lang.Class({
     Name: "UserIndicator",
     Extends: CustomButton,
@@ -89,7 +88,7 @@ var UserIndicator = new Lang.Class({
         let settings = new PopupMenu.PopupBaseMenuItem();
 
         let settings_label = new St.Label({
-            text: "System Settings",
+            text: _("System Settings"),
             y_align: Clutter.ActorAlign.CENTER
         });
         let settings_icon = new St.Icon({
@@ -109,7 +108,7 @@ var UserIndicator = new Lang.Class({
         let lock = new PopupMenu.PopupBaseMenuItem();
 
         let lock_label = new St.Label({
-            text: "Lock",
+            text: _("Lock"),
             y_align: Clutter.ActorAlign.CENTER
         });
         let lock_icon = new St.Icon({
@@ -127,7 +126,21 @@ var UserIndicator = new Lang.Class({
             lock.actor.hide();
         }
 
-        let switchuser = new PopupMenu.PopupMenuItem(_("Switch User"));
+        //////////////
+        let switchuser = new PopupMenu.PopupBaseMenuItem();
+
+        let switchuser_label = new St.Label({
+            text: _("Switch User"),
+            y_align: Clutter.ActorAlign.CENTER
+        });
+        
+        this._switchuser_gicon = Gio.icon_new_for_string(`${Me.path}/icons/switch-user-symbolic.svg`);
+        let switchuser_icon = new St.Icon({ gicon: this._switchuser_gicon });
+        switchuser_icon.icon_size = PANEL_ICON_SIZE;
+
+        switchuser.actor.add_actor(switchuser_icon);
+        switchuser.actor.add_actor(switchuser_label);
+
         this.menu.addMenuItem(switchuser);
         switchuser.connect("activate", () => this._system._systemActions.activateSwitchUser());
         if (!this._system._loginScreenItem.actor.visible) {
@@ -137,18 +150,31 @@ var UserIndicator = new Lang.Class({
         this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem()); // SEPARATOR
 
         //////////////
-        let orientation = new PopupMenu.PopupMenuItem(_("Orientation Lock"));
+        let orientation = new PopupMenu.PopupBaseMenuItem();
+
+        let orientation_label = new St.Label({
+            text: _("Orientation Lock"),
+            y_align: Clutter.ActorAlign.CENTER
+        });
+
+        this._orientation_icon_gicon = Gio.icon_new_for_string(`${Me.path}/icons/orientation-lock-symbolic.svg`);
+        let orientation_icon = new St.Icon({ gicon: this._orientation_icon_gicon });
+        orientation_icon.icon_size = PANEL_ICON_SIZE;
+
+        orientation.actor.add_actor(orientation_icon);
+        orientation.actor.add_actor(orientation_label);
+
         orientation.connect("activate", () => this._system._systemActions.activateLockOrientation());
         this.menu.addMenuItem(orientation);
         if (!this._system._orientationLockAction.visible) {
             orientation.actor.hide();
         }
-        ///////////////
 
+        ///////////////
         let suspend = new PopupMenu.PopupBaseMenuItem();
 
         let suspend_label = new St.Label({
-            text: "Suspend",
+            text: _("Suspend"),
             y_align: Clutter.ActorAlign.CENTER
         });
         let suspend_icon = new St.Icon({
@@ -169,7 +195,7 @@ var UserIndicator = new Lang.Class({
         let power = new PopupMenu.PopupBaseMenuItem();
 
         let power_label = new St.Label({
-            text: "Power Off",
+            text: _("Power Off"),
             y_align: Clutter.ActorAlign.CENTER
         });
         

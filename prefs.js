@@ -280,15 +280,15 @@ var IndicatorsPage = new Lang.Class({
         this.settings = settings;
         this.menuItems = menuItems;
 
-        let spacingBox = new FrameBox("Indicators spacing");
-        let spacingRow = new FrameBoxRow();
+        this.spacingBox = new FrameBox(_("Indicators spacing"));
+        this.spacingRow = new FrameBoxRow();
 
-        let spacingLabel = new Gtk.Label({
-            label: _(""),
+        this.spacingLabel = new Gtk.Label({
+            label: "",
             xalign: 0,
             hexpand: true
         });
-        let spacingScale = new Gtk.HScale({
+        this.spacingScale = new Gtk.HScale({
             adjustment: new Gtk.Adjustment({
                 lower: 0,
                 upper: 15,
@@ -301,24 +301,24 @@ var IndicatorsPage = new Lang.Class({
             hexpand: true,
             value_pos: Gtk.PositionType.RIGHT
         });
-        spacingScale.connect("format-value", function (scale, value) {
+        this.spacingScale.connect("format-value", function (scale, value) {
             return value.toString() + " px";
         });
-        spacingScale.add_mark(3, Gtk.PositionType.BOTTOM, "3");
-        spacingScale.add_mark(6, Gtk.PositionType.BOTTOM, "6");
-        spacingScale.add_mark(9, Gtk.PositionType.BOTTOM, "9");
-        spacingScale.add_mark(12, Gtk.PositionType.BOTTOM, "12");
-        spacingScale.set_value(this.settings.get_int("spacing"));
-        spacingScale.connect("value-changed", Lang.bind(this, function () {
-            this.settings.set_int("spacing", spacingScale.get_value());
+        this.spacingScale.add_mark(3, Gtk.PositionType.BOTTOM, "3");
+        this.spacingScale.add_mark(6, Gtk.PositionType.BOTTOM, "6");
+        this.spacingScale.add_mark(9, Gtk.PositionType.BOTTOM, "9");
+        this.spacingScale.add_mark(12, Gtk.PositionType.BOTTOM, "12");
+        this.spacingScale.set_value(this.settings.get_int("spacing"));
+        this.spacingScale.connect("value-changed", Lang.bind(this, function () {
+            this.settings.set_int("spacing", this.spacingScale.get_value());
         }));
 
-        spacingRow.add(spacingLabel);
-        spacingRow.add(spacingScale);
+        this.spacingRow.add(this.spacingLabel);
+        this.spacingRow.add(this.spacingScale);
 
-        spacingBox.add(spacingRow);
+        this.spacingBox.add(this.spacingRow);
 
-        this.add(spacingBox);
+        this.add(this.spacingBox);
 
 
         this.indicatorsFrame = new FrameBox("");
@@ -459,7 +459,7 @@ var AboutPage = new Lang.Class({
         let projectName = Me.metadata["name"];
         let projectDescription = Me.metadata["description"];
         let projectUrl = Me.metadata["url"];
-        let logoPath = Me.path + "/icons/logo.png";
+        let logoPath = Me.path + "/icons/logo.svg";
         let [imageWidth, imageHeight] = [128, 128];
         let pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_size(logoPath, imageWidth, imageHeight);
         let menuImage = new Gtk.Image({
@@ -479,7 +479,7 @@ var AboutPage = new Lang.Class({
             expand: false
         });
         let menuLabel = new Gtk.Label({
-            label: "<b>Extend Panel Menu</b>",
+            label: "<b>Panel Indicators</b>",
             use_markup: true,
             expand: false
         });
@@ -489,7 +489,7 @@ var AboutPage = new Lang.Class({
             expand: false
         });
         let projectDescriptionLabel = new Gtk.Label({
-            label: _(projectDescription),
+            label: "\n" + _(projectDescription),
             expand: false
         });
         let helpLabel = new Gtk.Label({
@@ -508,7 +508,7 @@ var AboutPage = new Lang.Class({
         menuInfoBox.add(projectLinkButton);
 
         let authorLabel = new Gtk.Label({
-            label: _("Made with love by julio641742"),
+            label: _("This extension is a fork of Extend Panel Menu, thanks to julio641742"),
             justify: Gtk.Justification.CENTER,
             expand: true
         });
