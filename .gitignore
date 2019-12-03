@@ -1,0 +1,9 @@
+.~
+*~
+build
+build/*
+.build
+.build/*
+gschemas.compiled
+panel-indicators@leavitals.zip
+*.mo
