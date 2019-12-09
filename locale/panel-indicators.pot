@@ -96,6 +96,14 @@ msgstr ""
 msgid "This extension is a fork of Extend Panel Menu, thanks to julio641742"
 msgstr ""
 
+#: ../indicators/calendar.js:100
+msgid "No Events"
+msgstr ""
+
+#: ../indicators/calendar.js:128
+msgid "Date Time Settings"
+msgstr ""
+
 #: ../indicators/network.js:95
 msgid "Network Settings"
 msgstr ""

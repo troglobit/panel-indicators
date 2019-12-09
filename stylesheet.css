@@ -27,7 +27,9 @@
 }
 
 .datemenu-calendar-column {
-    border: 0;
+   border-left-width: 0;
+   border-right-width: 1px;
+   height: 24.1em;
 }
 
 .remove-menubutton {
@@ -42,4 +44,9 @@
 
 .remove-menubutton>StIcon {
     icon-size: 16px;
+}
+
+/* Message list */
+.message-list {
+    width: 22.5em;
 }
