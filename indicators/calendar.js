@@ -67,6 +67,7 @@ var CalendarIndicator = new Lang.Class({
         vbox = new St.Widget({
             style_class: "datemenu-calendar-column",
             layout_manager: boxLayout,
+            width: 332
         });
         boxLayout.hookup_style(vbox);
 
