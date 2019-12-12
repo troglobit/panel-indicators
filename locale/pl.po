@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-15 18:04-0800\n"
-"PO-Revision-Date: 2019-12-12 16:35+0100\n"
+"PO-Revision-Date: 2019-12-12 20:21+0100\n"
 "Language-Team: Piotr Komur, pkomur@gmail.com\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -134,11 +134,11 @@ msgstr "Włącz"
 
 #: ../indicators/nightlight.js:125
 msgid "Night Light Disabled"
-msgstr "Nocne oświetlenie wyłączone"
+msgstr "Nocne wyświetlanie wyłączone"
 
 #: ../indicators/nightlight.js:125
 msgid "Night Light On"
-msgstr "Nocne oświetlenie włączone"
+msgstr "Nocne wyświetlanie włączone"
 
 #: ../indicators/nightlight.js:126
 msgid "Disable Until Tomorrow"
@@ -186,7 +186,7 @@ msgstr "Ustawienia dźwięku"
 
 #: schemas.xml
 msgid "Night Light Indicator"
-msgstr "Wskaźnik nocnego oświetlenia"
+msgstr "Wskaźnik nocnego wyświetlania"
 
 msgid "Volume Indicator"
 msgstr "Wskaźnik głośności"
