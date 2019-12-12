@@ -80,22 +80,14 @@ function enable() {
     settingsChanged = new Array();
     let i = 0;
     settingsChanged[i++] = settings.connect("changed::items", applySettings);
-    settingsChanged[i++] = settings.connect("changed::spacing", changeSpacing);
+    settingsChanged[i++] = settings.connect("changed::spacing", applySettings);
     settingsChanged[i++] = settings.connect("changed::user-icon", changeUsericon);
     settingsChanged[i++] = settings.connect("changed::date-format", changeDateformat);
 
     applySettings();
-    changeSpacing();
     changeUsername();
     changeUsericon();
     changeDateformat();
-}
-
-function changeSpacing() {
-    let spacing = settings.get_int("spacing");
-    indicators.forEach(function (item) {
-        item.set_spacing(spacing);
-    });
 }
 
 function changeUsername() {

@@ -304,10 +304,7 @@ var IndicatorsPage = new Lang.Class({
         this.spacingScale.connect("format-value", function (scale, value) {
             return value.toString() + " px";
         });
-        this.spacingScale.add_mark(3, Gtk.PositionType.BOTTOM, "3");
-        this.spacingScale.add_mark(6, Gtk.PositionType.BOTTOM, "6");
-        this.spacingScale.add_mark(9, Gtk.PositionType.BOTTOM, "9");
-        this.spacingScale.add_mark(12, Gtk.PositionType.BOTTOM, "12");
+        this.spacingScale.add_mark(9, Gtk.PositionType.BOTTOM, "");
         this.spacingScale.set_value(this.settings.get_int("spacing"));
         this.spacingScale.connect("value-changed", Lang.bind(this, function () {
             this.settings.set_int("spacing", this.spacingScale.get_value());
