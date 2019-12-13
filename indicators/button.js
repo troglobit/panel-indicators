@@ -32,7 +32,7 @@ var CustomButton = new Lang.Class({
             vertical: false,
             style_class: "panel-status-menu-box"
         });;
-        this.actor.add_child(this.box);
+        this.add_child(this.box);
     },
     _openApp: function (app) {
         Shell.AppSystem.get_default().lookup_app(app).activate();
@@ -46,10 +46,10 @@ var CustomButton = new Lang.Class({
         if (spacing < 6) {
             style += '; -minimum-hpadding: %dpx'.format(spacing);
         }
-        this.actor.set_style(style);
+        this.set_style(style);
     },
     calculate_spacing: function () {
-        let style = this.actor.get_style();
+        let style = this.get_style();
         if (style) {
             let start = style.indexOf("-natural-hpadding: ");
             let end = style.indexOf("px;");

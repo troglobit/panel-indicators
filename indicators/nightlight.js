@@ -64,7 +64,7 @@ var NightLightIndicator = new Lang.Class({
 
         this._slider = new Slider.Slider(0);
         this._slider.connect('notify::value', (s, value) => this._sliderChanged(s, value));
-        this._slider.actor.accessible_name = 'Temperature';
+        this._slider.accessible_name = 'Temperature';
 
         this.menu.connect("open-state-changed", (menu, isOpen) => {
             if (isOpen) {
@@ -72,7 +72,7 @@ var NightLightIndicator = new Lang.Class({
             }
         });
         
-        sliderItem.actor.add(this._slider.actor, {
+        sliderItem.add(this._slider, {
             expand: true
         });
 
@@ -125,7 +125,7 @@ var NightLightIndicator = new Lang.Class({
         this._label.set_text(disabled ? _("Night Light Disabled") : _("Night Light On"));
         this._disableItem.label.text = disabled ? _("Resume") : _("Disable Until Tomorrow");
         this._disableItem.actor.visible = featureEnabled;
-        this.actor.visible = visible;
+        this.visible = visible;
     },
     destroy: function () {
         this._nightLight._proxy.disconnect(this._properties_changed);

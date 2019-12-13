@@ -86,7 +86,7 @@ var PowerIndicator = new Lang.Class({
             let hideOnFull = this._hideOnFull && (this._power._proxy.State == UPowerGlib.DeviceState.FULLY_CHARGED);
             let hideAtPercent = this._hideOnPercent && (this._power._proxy.Percentage >= this._hideWhenPercent);
 
-            this.actor.show();
+            this.show();
 
             if (hideOnFull) {
                 this.actor.hide();

@@ -66,7 +66,7 @@ var VolumeIndicator = new Lang.Class({
         let settings = new PopupMenu.PopupMenuItem(_("Volume Settings"));
         settings.connect("activate", () => this._openApp("gnome-sound-panel.desktop"));
         this.menu.addMenuItem(settings);
-        this.actor.connect("scroll-event", (actor, event) => this._volume._onScrollEvent(actor, event));
+        this.connect("scroll-event", (actor, event) => this._volume._onScrollEvent(actor, event));
     },
     _addPlayer: function (name) {
         let app = Shell.AppSystem.get_default().lookup_app(name + ".desktop")
