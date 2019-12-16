@@ -98,6 +98,10 @@ msgstr "Página da Web/Github"
 msgid "This extension is a fork of Extend Panel Menu, thanks to julio641742"
 msgstr "Esta extensão é um fork do Extend Panel Menu, obrigado julio641742"
 
+#: ../indicators/bluetooth.js:70
+msgid "Bluetooth Settings"
+msgstr "Configurações de Bluetooth"
+
 #: ../indicators/calendar.js:100
 msgid "No Events"
 msgstr "Nenhum evento"

@@ -27,6 +27,7 @@ const MenuItems = Me.imports.menuItems.MenuItems;
 const CustomButton = Me.imports.indicators.button.CustomButton;
 const CalendarIndicator = Me.imports.indicators.calendar.CalendarIndicator;
 const NetworkIndicator = Me.imports.indicators.network.NetworkIndicator;
+const BluetoothIndicator = Me.imports.indicators.bluetooth.BluetoothIndicator;
 const NightLightIndicator = Me.imports.indicators.nightlight.NightLightIndicator;
 const NotificationIndicator = Me.imports.indicators.notification.NotificationIndicator;
 const PowerIndicator = Me.imports.indicators.power.PowerIndicator;
@@ -45,6 +46,7 @@ let settingsChanged;
 let nightlight;
 let volume;
 let network;
+let bluetooth;
 let power;
 let calendar;
 let user;
@@ -59,6 +61,7 @@ function enable() {
     Main.panel._centerBox.remove_child(Main.panel.statusArea.dateMenu.container);
 
     network = new NetworkIndicator();
+    bluetooth = new BluetoothIndicator();
     volume = new VolumeIndicator();
     power = new PowerIndicator();
     calendar = new CalendarIndicator();
@@ -71,6 +74,7 @@ function enable() {
     Main.panel.addToStatusArea(calendar.name, calendar, 0, "center");
     Main.panel.addToStatusArea(power.name, power, 0, "right");
     Main.panel.addToStatusArea(network.name, network, 0, "right");
+    Main.panel.addToStatusArea(bluetooth.name, bluetooth, 0, "right");
     Main.panel.addToStatusArea(volume.name, volume, 0, "right");
     Main.panel.addToStatusArea(nightlight.name, nightlight, 0, "right");
 
@@ -115,6 +119,7 @@ function applySettings() {
     setup(enabled, center, indicators, "user", user);
     setup(enabled, center, indicators, "volume", volume);
     setup(enabled, center, indicators, "network", network);
+    setup(enabled, center, indicators, "bluetooth", bluetooth);
     setup(enabled, center, indicators, "notification", notification);
     setup(enabled, center, indicators, "calendar", calendar);
     setup(enabled, center, indicators, "nightlight", nightlight);
@@ -148,6 +153,7 @@ function removeAll() {
     removeContainer(nightlight);
     removeContainer(volume);
     removeContainer(network);
+    removeContainer(bluetooth);
     removeContainer(power);
     removeContainer(calendar);
     removeContainer(user);
@@ -174,6 +180,7 @@ function disable() {
     volume.destroy();
     power.destroy();
     network.destroy();
+    bluetooth.destroy();
     user.destroy();
     notification.destroy();
     calendar.destroy();

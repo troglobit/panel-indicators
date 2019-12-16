@@ -96,6 +96,10 @@ msgstr ""
 msgid "This extension is a fork of Extend Panel Menu, thanks to julio641742"
 msgstr ""
 
+#: ../indicators/bluetooth.js:70
+msgid "Bluetooth Settings"
+msgstr ""
+
 #: ../indicators/calendar.js:100
 msgid "No Events"
 msgstr ""

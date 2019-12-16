@@ -35,14 +35,10 @@ var NetworkIndicator = new Lang.Class({
         this.menu.actor.add_style_class_name("aggregate-menu");
 
         this._network = null;
-        this._bluetooth = null;
         this._rfkill = Main.panel.statusArea.aggregateMenu._rfkill;
 
         if (Config.HAVE_NETWORKMANAGER) {
             this._network = Main.panel.statusArea.aggregateMenu._network;
-        }
-        if (Config.HAVE_BLUETOOTH) {
-            this._bluetooth = Main.panel.statusArea.aggregateMenu._bluetooth;
         }
 
         this._location = Main.panel.statusArea.aggregateMenu._location;
@@ -59,11 +55,6 @@ var NetworkIndicator = new Lang.Class({
             this._network._primaryIndicator.hide();
             this._network._vpnIndicator.hide();
         }
-        if (this._bluetooth) {
-            this._bluetooth.indicators.remove_actor(this._bluetooth._indicator);
-            this.box.add_child(this._bluetooth._indicator);
-            this._bluetooth._indicator.hide();
-        }
 
         this._rfkill.indicators.remove_actor(this._rfkill._indicator);
         this.box.add_child(this._rfkill._indicator);
@@ -79,10 +70,6 @@ var NetworkIndicator = new Lang.Class({
         if (this._network) {
             Main.panel.statusArea.aggregateMenu.menu.box.remove_actor(this._network.menu.actor);
             this.menu.addMenuItem(this._network.menu);
-        }
-        if (this._bluetooth) {
-            Main.panel.statusArea.aggregateMenu.menu.box.remove_actor(this._bluetooth.menu.actor);
-            this.menu.addMenuItem(this._bluetooth.menu);
         }
 
         Main.panel.statusArea.aggregateMenu.menu.box.remove_actor(this._location.menu.actor);
@@ -102,14 +89,11 @@ var NetworkIndicator = new Lang.Class({
             this._network_notify = this._network._primaryIndicator.connect("notify", () => this._sync());
         }
 
-        if (this._bluetooth) {
-            this._bluetooth_properties_changed = this._bluetooth._proxy.connect("g-properties-changed", () => this._sync());
-            this._bluetooth._sync();
-        }
-
         this._rfkill._sync();
         this._location._syncIndicator();
         this._sync();
+
+        this.menu.box.set_width(270);
 
     },
     _sync: function () {
@@ -122,9 +106,6 @@ var NetworkIndicator = new Lang.Class({
         this._rfkill._manager._proxy.disconnect(this._rfkill_properties_changed);
         if (this._network) {
             this._network._primaryIndicator.disconnect(this._network_notify);
-        }
-        if (this._bluetooth) {
-            this._bluetooth._proxy.disconnect(this._bluetooth_properties_changed);
         }
 
         this.box.remove_child(this._location._indicator);
@@ -143,11 +124,6 @@ var NetworkIndicator = new Lang.Class({
         this._network.indicators.add_actor(this._network._primaryIndicator);
         this._network.indicators.add_actor(this._network._vpnIndicator);
         Main.panel.statusArea.aggregateMenu.menu.box.add_actor(this._network.menu.actor);
-
-        this.box.remove_child(this._bluetooth._indicator);
-        this.menu.box.remove_actor(this._bluetooth.menu.actor);
-        this._bluetooth.indicators.add_actor(this._bluetooth._indicator);
-        Main.panel.statusArea.aggregateMenu.menu.box.add_actor(this._bluetooth.menu.actor);
 
         this.parent();
     },

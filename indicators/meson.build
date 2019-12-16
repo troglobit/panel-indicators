@@ -1,4 +1,5 @@
 install_data([
+  'bluetooth.js',
   'button.js',
   'calendar.js',
   'network.js',
