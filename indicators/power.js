@@ -34,6 +34,7 @@ var PowerIndicator = new Lang.Class({
         this.menu.actor.add_style_class_name("aggregate-menu");
         this._power = Main.panel.statusArea.aggregateMenu._power;
         this._power.indicators.remove_actor(this._power._indicator);
+    
         this._brightness = Main.panel.statusArea.aggregateMenu._brightness;
         this._brightnessIcon = new St.Icon({
             icon_name: "display-brightness-symbolic",
@@ -50,8 +51,12 @@ var PowerIndicator = new Lang.Class({
         this.box.add_child(this._percentageLabel);
         Main.panel.statusArea.aggregateMenu.menu.box.remove_actor(this._brightness.menu.actor);
         this.menu.box.add_actor(this._brightness.menu.actor);
+
+        Main.panel.statusArea.aggregateMenu.menu.box.remove_actor(this._power.menu.actor);
+
         this._separator = new PopupMenu.PopupSeparatorMenuItem();
         this.menu.addMenuItem(this._separator);
+        
         this._label = new St.Label({
             style_class: "label-menu"
         });
@@ -114,10 +119,15 @@ var PowerIndicator = new Lang.Class({
     destroy: function () {
         this._power._proxy.disconnect(this._properties_changed);
         this._power._desktopSettings.disconnect(this._show_battery_signal);
+
         this.box.remove_child(this._power._indicator);
         this.menu.box.remove_actor(this._brightness.menu.actor);
+        
         this._power.indicators.add_actor(this._power._indicator);
         Main.panel.statusArea.aggregateMenu.menu.box.add_actor(this._brightness.menu.actor);
+
+        Main.panel.statusArea.aggregateMenu.menu.box.add_actor(this._power.menu.actor);
+        
         this.parent();
     }
 });

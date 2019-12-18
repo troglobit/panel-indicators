@@ -34,6 +34,7 @@ var UserIndicator = new Lang.Class({
 
     _init: function () {
         this.parent("UserIndicator");
+        this.menu.box.set_width(270);
         this.menu.actor.add_style_class_name("aggregate-menu");
         this._system = Main.panel.statusArea.aggregateMenu._system;
         this._screencast = Main.panel.statusArea.aggregateMenu._screencast;
@@ -55,11 +56,13 @@ var UserIndicator = new Lang.Class({
         this.box.add_child(this._powerIcon);
         this.box.add_child(this._nameLabel);
 
-        this.menu.box.set_width(270);
+        this._createSubMenu();
 
-        //////////////////////////////////////////////////////////////
-        // MENU
-        
+        Main.panel.statusArea.aggregateMenu.menu.box.remove_actor(this._system.menu.actor);
+        // this.menu.addMenuItem(this._system.menu);
+    },
+    _createSubMenu: function () {
+
         this._switchUserSubMenu = new PopupMenu.PopupSubMenuMenuItem('', true);
         this._switchUserSubMenu.icon.icon_name = 'avatar-default-symbolic';
 
@@ -225,5 +228,11 @@ var UserIndicator = new Lang.Class({
             this._powerIcon.hide();
             this._nameLabel.show();
         }
+    },
+    destroy: function () {
+        this.menu.box.remove_actor(this._system.menu.actor);
+        Main.panel.statusArea.aggregateMenu.menu.box.add_actor(this._system.menu.actor);
+        
+        this.parent();
     }
 });

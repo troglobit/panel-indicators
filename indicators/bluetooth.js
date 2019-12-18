@@ -35,6 +35,7 @@ var BluetoothIndicator = new Lang.Class({
 
     _init: function () {
         this.parent("BluetoothIndicator");
+        this.menu.box.set_width(270);
         this.menu.actor.add_style_class_name("aggregate-menu");
 
         this._bluetooth = null;
@@ -61,7 +62,6 @@ var BluetoothIndicator = new Lang.Class({
         this._indicator.icon_size = PANEL_ICON_SIZE;
 
         this.box.add_child(this._indicator);
-
       
         Main.panel.statusArea.aggregateMenu.menu.box.remove_actor(this._bluetooth.menu.actor);
         this.menu.addMenuItem(this._bluetooth.menu);
@@ -81,8 +81,6 @@ var BluetoothIndicator = new Lang.Class({
         this._model.connect('row-inserted', () => this._sync());
 
         this._bluetooth._item.icon.gicon = this._bluetooth_active_gicon;
-
-        this.menu.box.set_width(270);
 
         this._sync();
 
@@ -119,9 +117,10 @@ var BluetoothIndicator = new Lang.Class({
         this.box.remove_child(this._bluetooth._indicator);
         this.menu.box.remove_actor(this._bluetooth.menu.actor);
         this._bluetooth.indicators.add_actor(this._bluetooth._indicator);
-        Main.panel.statusArea.aggregateMenu.menu.box.add_actor(this._bluetooth.menu.actor);
         this._bluetooth._item.menu._setSettingsVisibility(true);
 
+        Main.panel.statusArea.aggregateMenu.menu.box.add_actor(this._bluetooth.menu.actor);
+        
         this.parent();
     },
 });

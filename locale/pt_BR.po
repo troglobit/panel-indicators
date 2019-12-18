@@ -110,9 +110,9 @@ msgstr "Nenhum evento"
 msgid "Date Time Settings"
 msgstr "Configurações de Data e Hora"
 
-#: ../indicators/network.js:95
+#: ../indicators/network.js:79
 msgid "Network Settings"
-msgstr "Configurações de rede"
+msgstr "Configurações de Rede"
 
 #: ../indicators/nightlight.js:67
 msgid "Temperature"
@@ -148,7 +148,7 @@ msgstr "Desligar até amanhã"
 
 #: ../indicators/power.js:59
 msgid "Power Settings"
-msgstr "Configurações de energia"
+msgstr "Configurações de Energia"
 
 #: ../indicators/system.js:73
 msgid "Log Out"
@@ -156,11 +156,11 @@ msgstr "Encerrar sessão"
 
 #: ../indicators/system.js:80
 msgid "Account Settings"
-msgstr "Configurações de conta"
+msgstr "Configurações de Conta"
 
 #: ../indicators/system.js:91
 msgid "System Settings"
-msgstr "Configurações de sistema"
+msgstr "Configurações de Sistema"
 
 #: ../indicators/system.js:111
 msgid "Lock"
@@ -184,7 +184,7 @@ msgstr "Desligar"
 
 #: ../indicators/volume.js:66
 msgid "Volume Settings"
-msgstr "Configurações de volume"
+msgstr "Configurações de Volume"
 
 #: schemas.xml
 msgid "Night Light Indicator"

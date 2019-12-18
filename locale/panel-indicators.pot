@@ -108,7 +108,7 @@ msgstr ""
 msgid "Date Time Settings"
 msgstr ""
 
-#: ../indicators/network.js:95
+#: ../indicators/network.js:79
 msgid "Network Settings"
 msgstr ""
 
