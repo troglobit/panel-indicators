@@ -182,14 +182,13 @@ var CalendarIndicator = new Lang.Class({
         this._date.actor.get_parent().remove_child(this._date.actor);
         this._clocksSection.actor.get_parent().remove_child(this._clocksSection.actor);
         this._weatherSection.actor.get_parent().remove_child(this._weatherSection.actor);
-        this._messageList.actor.get_parent().remove_child(this._messageList.actor);
-
-        this._indicatorParent.add_actor(this._clockIndicator);
-        this._calendarParent.add_child(this._messageList.actor);
-        this._calendarParent.add_child(this._calendar.actor);
+        
         this._calendarParent.add_child(this._date.actor);
         this._sectionParent.add_child(this._clocksSection.actor);
         this._sectionParent.add_child(this._weatherSection.actor);
+        this._calendarParent.add_child(this._calendar.actor);
+
+        this._indicatorParent.add_actor(this._clockIndicator);
 
         this.parent();
     }
