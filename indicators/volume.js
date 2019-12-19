@@ -113,6 +113,7 @@ var VolumeIndicator = new Lang.Class({
         this.menu.box.remove_actor(this._volume.menu.actor);
         this.menu.box.remove_actor(this._mediaSection.actor);
         this._volume.indicators.add_actor(this._volume._primaryIndicator);
+        this._mediaSection.actor.remove_style_class_name("music-box");
         Main.panel.statusArea.aggregateMenu.menu.box.add_actor(this._volume.menu.actor);
         Main.panel.statusArea.dateMenu._messageList._addSection(this._mediaSection);
         this.parent();

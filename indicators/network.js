@@ -51,8 +51,7 @@ var NetworkIndicator = new Lang.Class({
             this._network.indicators.remove_actor(this._network._vpnIndicator);
             this.box.add_child(this._network._primaryIndicator);
             this.box.add_child(this._network._vpnIndicator);
-            this._network._primaryIndicator.hide();
-            this._network._vpnIndicator.hide();
+            this._network._vpnIndicator.hide();            
         }
 
         this._rfkill.indicators.remove_actor(this._rfkill._indicator);
