@@ -188,6 +188,4 @@ function disable() {
     Main.panel.statusArea.aggregateMenu.container.show();
     Main.panel.statusArea.dateMenu.container.show();
     Main.panel._centerBox.add_child(Main.panel.statusArea.dateMenu.container);
-
-    // Main.panel._hideIndicators();
 }

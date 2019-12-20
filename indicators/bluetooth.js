@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-const { St, GLib, Clutter, Gio, GnomeBluetooth } = imports.gi;
+const { St, Gio, GnomeBluetooth } = imports.gi;
 const Lang = imports.lang;
 const Main = imports.ui.main;
 const Config = imports.misc.config;

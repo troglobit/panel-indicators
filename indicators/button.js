@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-const { St, Gio, Shell } = imports.gi;
+const { St, Shell } = imports.gi;
 const Lang = imports.lang;
 const PanelMenu = imports.ui.panelMenu;
 
