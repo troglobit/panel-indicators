@@ -80,8 +80,6 @@ var BluetoothIndicator = new Lang.Class({
         this._model.connect('row-deleted', () => this._sync());
         this._model.connect('row-inserted', () => this._sync());
 
-        this._bluetooth._item.icon.gicon = this._bluetooth_active_gicon;
-
         this._sync();
 
     },
@@ -91,8 +89,6 @@ var BluetoothIndicator = new Lang.Class({
         this.menu.setSensitive(sensitive);
 
         let [nDevices, nConnectedDevices] = this._bluetooth._getNDevices();
-
-        this.visible = nDevices > 0 ? true : false;
 
         if (nConnectedDevices > 0) {
             // Paired
