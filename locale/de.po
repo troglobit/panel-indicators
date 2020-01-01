@@ -1,0 +1,203 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Onno Giesmann <nutzer3105@gmail.com>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-15 18:04-0800\n"
+"PO-Revision-Date: 2020-01-01 13:56+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.4\n"
+"Last-Translator: Onno Giesmann <nutzer3105@gmail.com>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: de\n"
+
+#: ../prefs.js:184
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: ../prefs.js:193
+msgid "User/System Indicator"
+msgstr "Benutzer/System-Anzeige"
+
+#: ../prefs.js:197
+msgid "Show an icon instead of name"
+msgstr "Symbol statt Namen anzeigen"
+
+#: ../prefs.js:214
+msgid "Calendar Indicator"
+msgstr "Kalender-Anzeige"
+
+#: ../prefs.js:218
+msgid "Change date format"
+msgstr "Datumsformat ändern"
+
+#: ../prefs.js:251
+msgid "Power Indicator"
+msgstr "Energie-Anzeige"
+
+#: ../prefs.js:255
+msgid "Show battery percentage"
+msgstr "Batterieprozentsatz anzeigen"
+
+#: ../prefs.js:279
+msgid "Position and size"
+msgstr "Position und Größe"
+
+#: ../prefs.js:283
+msgid "Indicators spacing"
+msgstr "Abstand zwischen den Anzeigern"
+
+#: ../prefs.js:333
+msgid "Indicators Order"
+msgstr "Reihenfolge der Anzeiger"
+
+#: ../prefs.js:353
+msgid "Left"
+msgstr "Links"
+
+#: ../prefs.js:354
+msgid "Center"
+msgstr "Mittig"
+
+#: ../prefs.js:407
+msgid "Top to bottom -> Left to right"
+msgstr "Oben nach unten -> Links nach rechts"
+
+#: ../prefs.js:412
+msgid "Reset Indicators"
+msgstr "Anzeiger zurücksetzen"
+
+#: ../prefs.js:418
+msgid "Reset"
+msgstr "Zurücksetzen"
+
+#: ../prefs.js:455
+msgid "About"
+msgstr "Info"
+
+#: ../prefs.js:487
+msgid "Version: "
+msgstr "Version: "
+
+#: ../prefs.js:496
+msgid "If something breaks, don't hesitate to leave a comment at "
+msgstr "Wenn etwas nicht klappt, senden Sie ruhig eine Nachricht an "
+
+#: ../prefs.js:500
+msgid "Webpage/Github"
+msgstr "Internetseite/Github"
+
+#: ../prefs.js:511
+msgid "This extension is a fork of Extend Panel Menu, thanks to julio641742"
+msgstr "Diese Erweiterung ist eine Abspaltung von Extend Panel Menu, Danke dafür an julio641742"
+
+#: ../indicators/bluetooth.js:70
+msgid "Bluetooth Settings"
+msgstr "Bluetooth-Einstellungen"
+
+#: ../indicators/calendar.js:100
+msgid "No Events"
+msgstr "Keine Ereignisse"
+
+#: ../indicators/calendar.js:128
+msgid "Date Time Settings"
+msgstr "Einstellungen für Datum und Zeit"
+
+#: ../indicators/network.js:79
+msgid "Network Settings"
+msgstr "Netzwerkeinstellungen"
+
+#: ../indicators/nightlight.js:67
+msgid "Temperature"
+msgstr "Temperatur"
+
+#: ../indicators/nightlight.js:83 ../indicators/nightlight.js:126
+msgid "Resume"
+msgstr "Fortsetzen"
+
+#: ../indicators/nightlight.js:86 ../indicators/nightlight.js:122
+msgid "Turn Off"
+msgstr "Ausschalten"
+
+#: ../indicators/nightlight.js:89
+msgid "Display Settings"
+msgstr "Bildschirmeinstellungen"
+
+#: ../indicators/nightlight.js:122
+msgid "Turn On"
+msgstr "Einschalten"
+
+#: ../indicators/nightlight.js:125
+msgid "Night Light Disabled"
+msgstr "Nachtmodus deaktiviert"
+
+#: ../indicators/nightlight.js:125
+msgid "Night Light On"
+msgstr "Nachtmodus ist an"
+
+#: ../indicators/nightlight.js:126
+msgid "Disable Until Tomorrow"
+msgstr "Ausschalten bis morgen"
+
+#: ../indicators/power.js:59
+msgid "Power Settings"
+msgstr "Energieeinstellungen"
+
+#: ../indicators/system.js:73
+msgid "Log Out"
+msgstr "Abmelden"
+
+#: ../indicators/system.js:80
+msgid "Account Settings"
+msgstr "Kontoeinstellungen"
+
+#: ../indicators/system.js:91
+msgid "System Settings"
+msgstr "Systemeinstellungen"
+
+#: ../indicators/system.js:111
+msgid "Lock"
+msgstr "Sperren"
+
+#: ../indicators/system.js:133
+msgid "Switch User"
+msgstr "Benutzer wechseln"
+
+#: ../indicators/system.js:156
+msgid "Orientation Lock"
+msgstr "Bildschirmdrehung sperren"
+
+#: ../indicators/system.js:177
+msgid "Suspend"
+msgstr "Ruhezustand"
+
+#: ../indicators/system.js:198
+msgid "Power Off"
+msgstr "Ausschalten"
+
+#: ../indicators/volume.js:66
+msgid "Volume Settings"
+msgstr "Lautstärkeeinstellungen"
+
+#: schemas.xml
+msgid "Night Light Indicator"
+msgstr "Nachtmodus-Anzeige"
+
+msgid "Volume Indicator"
+msgstr "Lautstärke-Anzeige"
+
+msgid "Network Indicator"
+msgstr "Netzwerk-Anzeige"
+
+msgid "Power (Brightness) Indicator"
+msgstr "Energie- (Helligkeits-)-Anzeige"
+
+msgid "User Indicator"
+msgstr "Benutzer-Anzeige"
