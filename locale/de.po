@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-15 18:04-0800\n"
-"PO-Revision-Date: 2020-01-01 13:56+0100\n"
+"PO-Revision-Date: 2020-01-04 21:50+0100\n"
+"Last-Translator: Onno Giesmann <nutzer3105@gmail.com>\n"
 "Language-Team: \n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.2.4\n"
-"Last-Translator: Onno Giesmann <nutzer3105@gmail.com>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: de\n"
 
 #: ../prefs.js:184
 msgid "Settings"
@@ -54,59 +54,62 @@ msgstr "Position und Größe"
 msgid "Indicators spacing"
 msgstr "Abstand zwischen den Anzeigern"
 
-#: ../prefs.js:333
+#: ../prefs.js:330
 msgid "Indicators Order"
 msgstr "Reihenfolge der Anzeiger"
 
-#: ../prefs.js:353
+#: ../prefs.js:350
 msgid "Left"
 msgstr "Links"
 
-#: ../prefs.js:354
+#: ../prefs.js:351
 msgid "Center"
 msgstr "Mittig"
 
-#: ../prefs.js:407
+#: ../prefs.js:404
 msgid "Top to bottom -> Left to right"
 msgstr "Oben nach unten -> Links nach rechts"
 
-#: ../prefs.js:412
+#: ../prefs.js:409
 msgid "Reset Indicators"
 msgstr "Anzeiger zurücksetzen"
 
-#: ../prefs.js:418
+#: ../prefs.js:415
 msgid "Reset"
 msgstr "Zurücksetzen"
 
-#: ../prefs.js:455
+#: ../prefs.js:452
 msgid "About"
 msgstr "Info"
 
-#: ../prefs.js:487
+#: ../prefs.js:484
 msgid "Version: "
 msgstr "Version: "
 
-#: ../prefs.js:496
+#: ../prefs.js:493
 msgid "If something breaks, don't hesitate to leave a comment at "
-msgstr "Wenn etwas nicht klappt, senden Sie ruhig eine Nachricht an "
+msgstr ""
+"Wenn etwas nicht klappt, hinterlassen Sie dazu gerne einen Kommentar auf "
 
-#: ../prefs.js:500
+#: ../prefs.js:497
 msgid "Webpage/Github"
 msgstr "Internetseite/Github"
 
-#: ../prefs.js:511
+#: ../prefs.js:508
 msgid "This extension is a fork of Extend Panel Menu, thanks to julio641742"
-msgstr "Diese Erweiterung ist eine Abspaltung von Extend Panel Menu, Danke dafür an julio641742"
+msgstr ""
+"Diese Erweiterung ist eine Abspaltung von Extend Panel Menu, Danke dafür an "
+"julio641742"
 
 #: ../indicators/bluetooth.js:70
 msgid "Bluetooth Settings"
 msgstr "Bluetooth-Einstellungen"
 
-#: ../indicators/calendar.js:100
+#: ../indicators/calendar.js:101
 msgid "No Events"
 msgstr "Keine Ereignisse"
 
-#: ../indicators/calendar.js:128
+#: ../indicators/calendar.js:129
 msgid "Date Time Settings"
 msgstr "Einstellungen für Datum und Zeit"
 
@@ -114,71 +117,71 @@ msgstr "Einstellungen für Datum und Zeit"
 msgid "Network Settings"
 msgstr "Netzwerkeinstellungen"
 
-#: ../indicators/nightlight.js:67
+#: ../indicators/nightlight.js:70
 msgid "Temperature"
 msgstr "Temperatur"
 
-#: ../indicators/nightlight.js:83 ../indicators/nightlight.js:126
+#: ../indicators/nightlight.js:88 ../indicators/nightlight.js:132
 msgid "Resume"
 msgstr "Fortsetzen"
 
-#: ../indicators/nightlight.js:86 ../indicators/nightlight.js:122
+#: ../indicators/nightlight.js:92 ../indicators/nightlight.js:128
 msgid "Turn Off"
 msgstr "Ausschalten"
 
-#: ../indicators/nightlight.js:89
+#: ../indicators/nightlight.js:96
 msgid "Display Settings"
 msgstr "Bildschirmeinstellungen"
 
-#: ../indicators/nightlight.js:122
+#: ../indicators/nightlight.js:128
 msgid "Turn On"
 msgstr "Einschalten"
 
-#: ../indicators/nightlight.js:125
+#: ../indicators/nightlight.js:131
 msgid "Night Light Disabled"
 msgstr "Nachtmodus deaktiviert"
 
-#: ../indicators/nightlight.js:125
+#: ../indicators/nightlight.js:131
 msgid "Night Light On"
 msgstr "Nachtmodus ist an"
 
-#: ../indicators/nightlight.js:126
+#: ../indicators/nightlight.js:132
 msgid "Disable Until Tomorrow"
 msgstr "Ausschalten bis morgen"
 
-#: ../indicators/power.js:59
+#: ../indicators/power.js:64
 msgid "Power Settings"
 msgstr "Energieeinstellungen"
 
-#: ../indicators/system.js:73
+#: ../indicators/system.js:76
 msgid "Log Out"
 msgstr "Abmelden"
 
-#: ../indicators/system.js:80
+#: ../indicators/system.js:83
 msgid "Account Settings"
 msgstr "Kontoeinstellungen"
 
-#: ../indicators/system.js:91
+#: ../indicators/system.js:94
 msgid "System Settings"
 msgstr "Systemeinstellungen"
 
-#: ../indicators/system.js:111
+#: ../indicators/system.js:114
 msgid "Lock"
 msgstr "Sperren"
 
-#: ../indicators/system.js:133
+#: ../indicators/system.js:136
 msgid "Switch User"
 msgstr "Benutzer wechseln"
 
-#: ../indicators/system.js:156
+#: ../indicators/system.js:159
 msgid "Orientation Lock"
 msgstr "Bildschirmdrehung sperren"
 
-#: ../indicators/system.js:177
+#: ../indicators/system.js:180
 msgid "Suspend"
 msgstr "Ruhezustand"
 
-#: ../indicators/system.js:198
+#: ../indicators/system.js:201
 msgid "Power Off"
 msgstr "Ausschalten"
 
@@ -187,17 +190,35 @@ msgid "Volume Settings"
 msgstr "Lautstärkeeinstellungen"
 
 #: schemas.xml
-msgid "Night Light Indicator"
-msgstr "Nachtmodus-Anzeige"
+msgid "Calendar"
+msgstr "Kalender"
 
-msgid "Volume Indicator"
-msgstr "Lautstärke-Anzeige"
+msgid "Night Light"
+msgstr "Nachtmodus"
 
-msgid "Network Indicator"
-msgstr "Netzwerk-Anzeige"
+msgid "Volume"
+msgstr "Lautstärke"
 
-msgid "Power (Brightness) Indicator"
-msgstr "Energie- (Helligkeits-)-Anzeige"
+msgid "Network"
+msgstr "Netzwerk"
 
-msgid "User Indicator"
-msgstr "Benutzer-Anzeige"
+msgid "Power (Brightness)"
+msgstr "Energie (Helligkeit)"
+
+msgid "Notification"
+msgstr "Benachrichtigung"
+
+msgid "User"
+msgstr "Benutzer"
+
+#~ msgid "Night Light Indicator"
+#~ msgstr "Nachtmodus"
+
+#~ msgid "Volume Indicator"
+#~ msgstr "Lautstärke"
+
+#~ msgid "Network Indicator"
+#~ msgstr "Netzwerk"
+
+#~ msgid "User Indicator"
+#~ msgstr "Benutzer"
