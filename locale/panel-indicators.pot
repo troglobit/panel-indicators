@@ -52,47 +52,47 @@ msgstr ""
 msgid "Indicators spacing"
 msgstr ""
 
-#: ../prefs.js:333
+#: ../prefs.js:330
 msgid "Indicators Order"
 msgstr ""
 
-#: ../prefs.js:353
+#: ../prefs.js:350
 msgid "Left"
 msgstr ""
 
-#: ../prefs.js:354
+#: ../prefs.js:351
 msgid "Center"
 msgstr ""
 
-#: ../prefs.js:407
+#: ../prefs.js:404
 msgid "Top to bottom -> Left to right"
 msgstr ""
 
-#: ../prefs.js:412
+#: ../prefs.js:409
 msgid "Reset Indicators"
 msgstr ""
 
-#: ../prefs.js:418
+#: ../prefs.js:415
 msgid "Reset"
 msgstr ""
 
-#: ../prefs.js:455
+#: ../prefs.js:452
 msgid "About"
 msgstr ""
 
-#: ../prefs.js:487
+#: ../prefs.js:484
 msgid "Version: "
 msgstr ""
 
-#: ../prefs.js:496
+#: ../prefs.js:493
 msgid "If something breaks, don't hesitate to leave a comment at "
 msgstr ""
 
-#: ../prefs.js:500
+#: ../prefs.js:497
 msgid "Webpage/Github"
 msgstr ""
 
-#: ../prefs.js:511
+#: ../prefs.js:508
 msgid "This extension is a fork of Extend Panel Menu, thanks to julio641742"
 msgstr ""
 
@@ -100,11 +100,11 @@ msgstr ""
 msgid "Bluetooth Settings"
 msgstr ""
 
-#: ../indicators/calendar.js:100
+#: ../indicators/calendar.js:101
 msgid "No Events"
 msgstr ""
 
-#: ../indicators/calendar.js:128
+#: ../indicators/calendar.js:129
 msgid "Date Time Settings"
 msgstr ""
 
@@ -112,71 +112,71 @@ msgstr ""
 msgid "Network Settings"
 msgstr ""
 
-#: ../indicators/nightlight.js:67
+#: ../indicators/nightlight.js:70
 msgid "Temperature"
 msgstr ""
 
-#: ../indicators/nightlight.js:83 ../indicators/nightlight.js:126
+#: ../indicators/nightlight.js:88 ../indicators/nightlight.js:132
 msgid "Resume"
 msgstr ""
 
-#: ../indicators/nightlight.js:86 ../indicators/nightlight.js:122
+#: ../indicators/nightlight.js:92 ../indicators/nightlight.js:128
 msgid "Turn Off"
 msgstr ""
 
-#: ../indicators/nightlight.js:89
+#: ../indicators/nightlight.js:96
 msgid "Display Settings"
 msgstr ""
 
-#: ../indicators/nightlight.js:122
+#: ../indicators/nightlight.js:128
 msgid "Turn On"
 msgstr ""
 
-#: ../indicators/nightlight.js:125
+#: ../indicators/nightlight.js:131
 msgid "Night Light Disabled"
 msgstr ""
 
-#: ../indicators/nightlight.js:125
+#: ../indicators/nightlight.js:131
 msgid "Night Light On"
 msgstr ""
 
-#: ../indicators/nightlight.js:126
+#: ../indicators/nightlight.js:132
 msgid "Disable Until Tomorrow"
 msgstr ""
 
-#: ../indicators/power.js:59
+#: ../indicators/power.js:64
 msgid "Power Settings"
 msgstr ""
 
-#: ../indicators/system.js:73
+#: ../indicators/system.js:76
 msgid "Log Out"
 msgstr ""
 
-#: ../indicators/system.js:80
+#: ../indicators/system.js:83
 msgid "Account Settings"
 msgstr ""
 
-#: ../indicators/system.js:91
+#: ../indicators/system.js:94
 msgid "System Settings"
 msgstr ""
 
-#: ../indicators/system.js:111
+#: ../indicators/system.js:114
 msgid "Lock"
 msgstr ""
 
-#: ../indicators/system.js:133
+#: ../indicators/system.js:136
 msgid "Switch User"
 msgstr ""
 
-#: ../indicators/system.js:156
+#: ../indicators/system.js:159
 msgid "Orientation Lock"
 msgstr ""
 
-#: ../indicators/system.js:177
+#: ../indicators/system.js:180
 msgid "Suspend"
 msgstr ""
 
-#: ../indicators/system.js:198
+#: ../indicators/system.js:201
 msgid "Power Off"
 msgstr ""
 
@@ -186,18 +186,24 @@ msgstr ""
 
 
 #: schemas.xml
-msgid "Night Light Indicator"
+msgid "Calendar"
 msgstr ""
 
-msgid "Volume Indicator"
+msgid "Night Light"
 msgstr ""
 
-msgid "Network Indicator"
+msgid "Volume"
 msgstr ""
 
-msgid "Power (Brightness) Indicator"
+msgid "Network"
 msgstr ""
 
-msgid "User Indicator"
+msgid "Power (Brightness)"
+msgstr ""
+
+msgid "Notification"
+msgstr ""
+
+msgid "User"
 msgstr ""
 

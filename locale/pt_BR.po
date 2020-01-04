@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-15 18:04-0800\n"
-"PO-Revision-Date: 2019-12-02 15:06-0300\n"
+"PO-Revision-Date: 2020-01-04 11:54-0300\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,7 +36,7 @@ msgstr "Indicador de calendário"
 
 #: ../prefs.js:218
 msgid "Change date format"
-msgstr "Formato da data"
+msgstr "Alterar formato da data"
 
 #: ../prefs.js:251
 msgid "Power Indicator"
@@ -54,47 +54,47 @@ msgstr "Posição e tamanho"
 msgid "Indicators spacing"
 msgstr "Espaçamento dos indicadores"
 
-#: ../prefs.js:333
+#: ../prefs.js:330
 msgid "Indicators Order"
 msgstr "Ordenar Indicadores"
 
-#: ../prefs.js:353
+#: ../prefs.js:350
 msgid "Left"
 msgstr "Esquerda"
 
-#: ../prefs.js:354
+#: ../prefs.js:351
 msgid "Center"
 msgstr "Centro"
 
-#: ../prefs.js:407
+#: ../prefs.js:404
 msgid "Top to bottom -> Left to right"
 msgstr "De cima para baixo -> De esquerda para a direita"
 
-#: ../prefs.js:412
+#: ../prefs.js:409
 msgid "Reset Indicators"
 msgstr "Redefinir Indicadores"
 
-#: ../prefs.js:418
+#: ../prefs.js:415
 msgid "Reset"
 msgstr "Redefinr"
 
-#: ../prefs.js:455
+#: ../prefs.js:452
 msgid "About"
 msgstr "Sobre"
 
-#: ../prefs.js:487
+#: ../prefs.js:484
 msgid "Version: "
 msgstr "Versão: "
 
-#: ../prefs.js:496
+#: ../prefs.js:493
 msgid "If something breaks, don't hesitate to leave a comment at "
 msgstr "Se algo quebrar, não hesite em deixar um comentário no "
 
-#: ../prefs.js:500
+#: ../prefs.js:497
 msgid "Webpage/Github"
 msgstr "Página da Web/Github"
 
-#: ../prefs.js:511
+#: ../prefs.js:508
 msgid "This extension is a fork of Extend Panel Menu, thanks to julio641742"
 msgstr "Esta extensão é um fork do Extend Panel Menu, obrigado julio641742"
 
@@ -102,11 +102,11 @@ msgstr "Esta extensão é um fork do Extend Panel Menu, obrigado julio641742"
 msgid "Bluetooth Settings"
 msgstr "Configurações de Bluetooth"
 
-#: ../indicators/calendar.js:100
+#: ../indicators/calendar.js:101
 msgid "No Events"
 msgstr "Nenhum evento"
 
-#: ../indicators/calendar.js:128
+#: ../indicators/calendar.js:129
 msgid "Date Time Settings"
 msgstr "Configurações de Data e Hora"
 
@@ -114,71 +114,71 @@ msgstr "Configurações de Data e Hora"
 msgid "Network Settings"
 msgstr "Configurações de Rede"
 
-#: ../indicators/nightlight.js:67
+#: ../indicators/nightlight.js:70
 msgid "Temperature"
 msgstr "Temperatura"
 
-#: ../indicators/nightlight.js:83 ../indicators/nightlight.js:126
+#: ../indicators/nightlight.js:88 ../indicators/nightlight.js:132
 msgid "Resume"
 msgstr "Resumir"
 
-#: ../indicators/nightlight.js:86 ../indicators/nightlight.js:122
+#: ../indicators/nightlight.js:92 ../indicators/nightlight.js:128
 msgid "Turn Off"
 msgstr "Desligar"
 
-#: ../indicators/nightlight.js:89
+#: ../indicators/nightlight.js:96
 msgid "Display Settings"
 msgstr "Ajustar Tela"
 
-#: ../indicators/nightlight.js:122
+#: ../indicators/nightlight.js:128
 msgid "Turn On"
 msgstr "Ligar"
 
-#: ../indicators/nightlight.js:125
+#: ../indicators/nightlight.js:131
 msgid "Night Light Disabled"
 msgstr "Luz noturna desativada"
 
-#: ../indicators/nightlight.js:125
+#: ../indicators/nightlight.js:131
 msgid "Night Light On"
 msgstr "Luz noturna ligada"
 
-#: ../indicators/nightlight.js:126
+#: ../indicators/nightlight.js:132
 msgid "Disable Until Tomorrow"
 msgstr "Desligar até amanhã"
 
-#: ../indicators/power.js:59
+#: ../indicators/power.js:64
 msgid "Power Settings"
 msgstr "Configurações de Energia"
 
-#: ../indicators/system.js:73
+#: ../indicators/system.js:76
 msgid "Log Out"
 msgstr "Encerrar sessão"
 
-#: ../indicators/system.js:80
+#: ../indicators/system.js:83
 msgid "Account Settings"
 msgstr "Configurações de Conta"
 
-#: ../indicators/system.js:91
+#: ../indicators/system.js:94
 msgid "System Settings"
 msgstr "Configurações de Sistema"
 
-#: ../indicators/system.js:111
+#: ../indicators/system.js:114
 msgid "Lock"
 msgstr "Bloquear"
 
-#: ../indicators/system.js:133
+#: ../indicators/system.js:136
 msgid "Switch User"
 msgstr "Trocar Usuário"
 
-#: ../indicators/system.js:156
+#: ../indicators/system.js:159
 msgid "Orientation Lock"
 msgstr "Bloquear rotação"
 
-#: ../indicators/system.js:177
+#: ../indicators/system.js:180
 msgid "Suspend"
 msgstr "Suspender"
 
-#: ../indicators/system.js:198
+#: ../indicators/system.js:201
 msgid "Power Off"
 msgstr "Desligar"
 
@@ -187,17 +187,23 @@ msgid "Volume Settings"
 msgstr "Configurações de Volume"
 
 #: schemas.xml
-msgid "Night Light Indicator"
-msgstr "Indicador de luz noturna"
+msgid "Calendar"
+msgstr "Calendário"
 
-msgid "Volume Indicator"
-msgstr "Indicador de Volume"
+msgid "Night Light"
+msgstr "Luz noturna"
 
-msgid "Network Indicator"
-msgstr "Indicador de rede"
+msgid "Volume"
+msgstr "Volume"
 
-msgid "Power (Brightness) Indicator"
-msgstr "Indicador de energia (brilho)"
+msgid "Network"
+msgstr "Rede"
 
-msgid "User Indicator"
-msgstr "Indicador de usuário"
+msgid "Power (Brightness)"
+msgstr "Energia (brilho)"
+
+msgid "Notification"
+msgstr "Notificação"
+
+msgid "User"
+msgstr "Usuário"
