@@ -43,12 +43,12 @@ var BluetoothIndicator = new Lang.Class({
         if (Config.HAVE_BLUETOOTH) {
             this._bluetooth = Main.panel.statusArea.aggregateMenu._bluetooth;
         }
-        
-        if (!this._bluetooth) {
-            this.visible = false; 
-            return; 
-        }
 
+        if (!this._bluetooth) {
+            this.hide();
+            return;
+        }
+        
         this._bluetooth_active_gicon = Gio.icon_new_for_string(`${Me.path}/icons/bluetooth-active-symbolic.svg`);
         this._bluetooth_disabled_gicon = Gio.icon_new_for_string(`${Me.path}/icons/bluetooth-disabled-symbolic.svg`);
         this._bluetooth_paired_gicon = Gio.icon_new_for_string(`${Me.path}/icons/bluetooth-paired-symbolic.svg`);
