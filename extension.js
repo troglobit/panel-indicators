@@ -71,7 +71,7 @@ function enable() {
 
     Main.panel.addToStatusArea(notification.name, notification, 0, "right");
     Main.panel.addToStatusArea(user.name, user, 0, "right");
-    Main.panel.addToStatusArea(calendar.name, calendar, 0, "center");
+    Main.panel.addToStatusArea(calendar.name, calendar, 0, "right");
     Main.panel.addToStatusArea(power.name, power, 0, "right");
     Main.panel.addToStatusArea(network.name, network, 0, "right");
     Main.panel.addToStatusArea(bluetooth.name, bluetooth, 0, "right");
