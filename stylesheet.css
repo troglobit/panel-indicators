@@ -51,3 +51,7 @@
 .message-list {
     width: 22.5em;
 }
+
+.panel-status-menu-box>StIcon { 
+    icons-size: 16px; padding: 4px;
+}
