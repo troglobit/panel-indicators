@@ -78,6 +78,9 @@ var PowerIndicator = new Lang.Class({
             this._separator.actor.hide();
             this._label.hide();
             this._settings.actor.hide();
+
+            this.hide();
+            
         } else {
             this._brightnessIcon.hide();
             this._power._indicator.show();
