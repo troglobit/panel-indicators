@@ -98,11 +98,14 @@ var BluetoothIndicator = new Lang.Class({
             // Off
             this._indicator.gicon = this._bluetooth_disabled_gicon;
             this._bluetooth._item.icon.gicon = this._bluetooth_disabled_gicon;
+            this._bluetooth._item.actor.show();
         } else {
             // On
             this._indicator.gicon = this._bluetooth_active_gicon;
             this._bluetooth._item.icon.gicon = this._bluetooth_active_gicon;
         }
+
+
 
     },
     destroy: function () {
