@@ -105,8 +105,6 @@ var BluetoothIndicator = new Lang.Class({
             this._bluetooth._item.icon.gicon = this._bluetooth_active_gicon;
         }
 
-
-
     },
     destroy: function () {
         if (this._bluetooth) {
