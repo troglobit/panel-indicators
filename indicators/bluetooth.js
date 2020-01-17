@@ -80,6 +80,13 @@ var BluetoothIndicator = new Lang.Class({
         this._model.connect('row-deleted', () => this._sync());
         this._model.connect('row-inserted', () => this._sync());
 
+
+        this.menu.connect("open-state-changed", (menu, isOpen) => {
+            if (isOpen) {
+                this._bluetooth._item.actor.show();
+            }
+        });
+
         this._sync();
 
     },
@@ -96,9 +103,9 @@ var BluetoothIndicator = new Lang.Class({
             this._bluetooth._item.icon.gicon = this._bluetooth_paired_gicon;
         } else if (nConnectedDevices == -1) {
             // Off
+            this._bluetooth._item.actor.show();
             this._indicator.gicon = this._bluetooth_disabled_gicon;
             this._bluetooth._item.icon.gicon = this._bluetooth_disabled_gicon;
-            this._bluetooth._item.actor.show();
         } else {
             // On
             this._indicator.gicon = this._bluetooth_active_gicon;
