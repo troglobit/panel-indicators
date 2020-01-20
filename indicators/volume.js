@@ -42,7 +42,9 @@ var VolumeIndicator = new Lang.Class({
 
         this._mediaSection = Main.panel.statusArea.dateMenu._messageList._mediaSection;
         Main.panel.statusArea.dateMenu._messageList._removeSection(this._mediaSection);
-        this._mediaSection.actor.add_style_class_name("music-box");
+
+        this._mediaSection.actor.set_style('max-width:400px;padding-right:6px;padding-bottom:10px;');
+
         this.menu.box.add_actor(this._mediaSection.actor);
 
         this.menu.connect("open-state-changed", (menu, isOpen) => {
