@@ -102,6 +102,7 @@ var CalendarIndicator = new Lang.Class({
             
         });
         this._scrollView.set_policy(St.PolicyType.NEVER, St.PolicyType.AUTOMATIC);
+        this._scrollView.actor.set_style('height: 116px;');
 
         let scrollableContainer = new St.BoxLayout({
             vertical: true,
@@ -147,13 +148,15 @@ var CalendarIndicator = new Lang.Class({
     menu_size: function (hbox) {
 
         var menuHeight = 356;
+
+        var clocksSectionHeight = this._clocksSection.actor.get_height();
  
         if (this._clocksSection._clocksApp != null) {
-            menuHeight += this._clocksSection.actor.get_height();
-            this._scrollView.actor.set_style('height: 112px;');
+            clocksSectionHeight.length > 0 ? menuHeight += clocksSectionHeight : menuHeight += 120;
+            this._scrollView.actor.show();
             this._clocksSection.actor.set_style('padding-left: 12px; padding-right: 20px;');
         } else {
-            this._scrollView.actor.set_style('height: 0px;');
+            this._scrollView.actor.hide();
         }
 
         if (this._weatherSection._weatherClient.available) {
