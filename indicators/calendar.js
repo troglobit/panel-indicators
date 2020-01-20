@@ -34,8 +34,6 @@ var CalendarIndicator = new Lang.Class({
         this._clock = Main.panel.statusArea.dateMenu._clock;
         this._calendar = Main.panel.statusArea.dateMenu._calendar;
         this._date = Main.panel.statusArea.dateMenu._date;
-
-        this._eventsSection = new imports.ui.calendar.EventsSection();
         this._clocksSection = Main.panel.statusArea.dateMenu._clocksItem;
         this._weatherSection = Main.panel.statusArea.dateMenu._weatherItem;
         this._clockIndicator = Main.panel.statusArea.dateMenu._clockDisplay;
@@ -62,7 +60,7 @@ var CalendarIndicator = new Lang.Class({
         let hbox;
         let vbox;
 
-        hbox = new St.BoxLayout({ name: 'calendarArea', height: 350 });
+        hbox = new St.BoxLayout({ name: 'calendarArea' });
 
         boxLayout = new imports.ui.dateMenu.CalendarColumnLayout(this._calendar.actor);
         vbox = new St.Widget({
@@ -97,27 +95,30 @@ var CalendarIndicator = new Lang.Class({
         vbox.add_actor(this._date.actor);
         vbox.add_actor(this._calendar.actor);
 
-        this._displaysSection = new St.ScrollView({
-            style_class: 'datemenu-displays-section vfade',
+        this._scrollView = new St.ScrollView({
+            overlay_scrollbars: true,
             x_expand: true,
-            overlay_scrollbars: true 
+            y_expand: true,
+            
         });
+        this._scrollView.set_policy(St.PolicyType.NEVER, St.PolicyType.AUTOMATIC);
 
-        this._displaysSection.set_policy(St.PolicyType.NEVER, St.PolicyType.AUTOMATIC);
-        
-        this._date.actor.add_child(this._displaysSection, { expand: true });
-
-        this._displaysBox = new St.BoxLayout({
+        let scrollableContainer = new St.BoxLayout({
             vertical: true,
+            reactive: true,
             x_expand: true,
-            style_class: 'datemenu-displays-box' 
+            y_expand: true,
         });
+        scrollableContainer.add_actor(this._clocksSection.actor);
+        
+        this._scrollView.add_actor(scrollableContainer);
 
-        vbox.add_actor(this._displaysBox);
-
-        this._displaysBox.add_child(this._weatherSection.actor);
+        vbox.add_actor(this._scrollView);
+        vbox.add_actor(this._weatherSection.actor);
 
         this.menu.box.add(hbox);
+
+        this.menu_size(hbox);
 
         this._separator = new PopupMenu.PopupSeparatorMenuItem();
         this.menu.addMenuItem(this._separator);
@@ -133,11 +134,7 @@ var CalendarIndicator = new Lang.Class({
                 this._calendar.setDate(now);
                 this._messageList.setDate(now);
 
-                if (this._weatherSection._weatherClient.available) {
-                    hbox.set_height(465);
-                } else {
-                    hbox.set_height(350);
-                }   
+                this.menu_size(hbox);  
             }
         });
 
@@ -146,6 +143,25 @@ var CalendarIndicator = new Lang.Class({
             this._messageList._placeholder._icon.gicon = this._otherIcon;
             this._messageList._placeholder._label.text = this._otherLabel;
         });
+    },
+    menu_size: function (hbox) {
+
+        var menuHeight = 356;
+ 
+        if (this._clocksSection._clocksApp != null) {
+            menuHeight += this._clocksSection.actor.get_height();
+            this._scrollView.actor.set_style('height: 112px;');
+            this._clocksSection.actor.set_style('padding-left: 12px; padding-right: 20px;');
+        } else {
+            this._scrollView.actor.set_style('height: 0px;');
+        }
+
+        if (this._weatherSection._weatherClient.available) {
+            menuHeight += this._weatherSection.actor.get_height();
+        }
+
+        hbox.set_height(menuHeight);
+
     },
     override: function (format) {
         this.resetFormat();
@@ -181,12 +197,12 @@ var CalendarIndicator = new Lang.Class({
         this._calendar.disconnect(this._date_changed);
         
         this.box.remove_child(this._clockIndicator);
-        this._displaysBox.remove_child(this._weatherSection.actor);
 
-        this._date.actor.remove_child(this._displaysSection);
         this._date.actor.get_parent().remove_child(this._date.actor);
         this._calendar.actor.get_parent().remove_child(this._calendar.actor);
-        
+        this._clocksSection.actor.get_parent().remove_child(this._clocksSection.actor);
+        this._weatherSection.actor.get_parent().remove_child(this._weatherSection.actor);
+      
         this._calendarParent.add_child(this._date.actor);
         this._sectionParent.add_child(this._clocksSection.actor);
         this._sectionParent.add_child(this._weatherSection.actor);
