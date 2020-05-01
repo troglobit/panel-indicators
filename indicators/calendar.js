@@ -58,7 +58,6 @@ var CalendarIndicator = new Lang.Class({
         this.box.add_actor(this._clockIndicatorFormat);
 
         let boxLayout;
-        let hbox;
         let vbox;
 
         hbox = new St.BoxLayout({ name: 'calendarArea' });
@@ -67,7 +66,6 @@ var CalendarIndicator = new Lang.Class({
         vbox = new St.Widget({
             style_class: "datemenu-calendar-column",
             layout_manager: boxLayout
-            // width: 332
         });
         boxLayout.hookup_style(vbox);
 
@@ -117,103 +115,6 @@ var CalendarIndicator = new Lang.Class({
         );
     },
 
-
-    //     hbox.add_actor(vbox);
-
-    //     // MESSAGE
-    //     this._messageList = new imports.ui.calendar.CalendarMessageList();
-    //     this._eventSource = new imports.ui.calendar.DBusEventSource();
-
-    //     this._calendar.setEventSource(this._eventSource);
-
-    //     this._messageList._clearButton.destroy();
-    //     this._messageList.setEventSource(this._eventSource);
-    //     this._messageList._removeSection(this._messageList._notificationSection);
-    //     this._messageList._removeSection(this._messageList._mediaSection);
-
-    //     let otherFile = Gio.File.new_for_uri('resource:///org/gnome/shell/theme/no-events.svg');
-    //     this._otherIcon = new Gio.FileIcon({ file: otherFile });
-    //     this._otherLabel = _("No Events");
-
-    //     this._messageList._placeholder._icon.gicon = this._otherIcon;
-    //     this._messageList._placeholder._label.text = this._otherLabel;
-
-    //     hbox.add_child(this._messageList.actor);
-
-    //     vbox.add_actor(this._date.actor);
-    //     vbox.add_actor(this._calendar.actor);
-
-    //     this._scrollView = new St.ScrollView({
-    //         overlay_scrollbars: true,
-    //         x_expand: true,
-    //         y_expand: true,
-            
-    //     });
-    //     this._scrollView.set_policy(St.PolicyType.NEVER, St.PolicyType.AUTOMATIC);
-    //     this._scrollView.actor.set_style('height: 116px;');
-
-    //     let scrollableContainer = new St.BoxLayout({
-    //         vertical: true,
-    //         reactive: true,
-    //         x_expand: true,
-    //         y_expand: true,
-    //     });
-    //     scrollableContainer.add_actor(this._clocksSection.actor);
-        
-    //     this._scrollView.add_actor(scrollableContainer);
-
-    //     vbox.add_actor(this._scrollView);
-    //     vbox.add_actor(this._weatherSection.actor);
-
-    //     this.menu.box.add(hbox);
-
-    //     this.menu_size(hbox);
-
-    //     this._separator = new PopupMenu.PopupSeparatorMenuItem();
-    //     this.menu.addMenuItem(this._separator);
-
-    //     this._settings = new PopupMenu.PopupMenuItem(_("Date Time Settings"));
-    //     this._settings.connect("activate", () => this._openApp("gnome-datetime-panel.desktop"));
-    //     this.menu.addMenuItem(this._settings);
-
-    //     this.menu.connect("open-state-changed", (menu, isOpen) => {
-    //         if (isOpen) {
-    //             let now = new Date();
-    //             this._date.setDate(now);
-    //             this._calendar.setDate(now);
-    //             this._messageList.setDate(now);
-
-    //             this.menu_size(hbox);  
-    //         }
-    //     });
-
-    //     this._date_changed = this._calendar.connect("selected-date-changed", (calendar, date) => {
-    //         this._messageList.setDate(date);
-    //         this._messageList._placeholder._icon.gicon = this._otherIcon;
-    //         this._messageList._placeholder._label.text = this._otherLabel;
-    //     });
-    // },
-    // menu_size: function (hbox) {
-
-    //     var menuHeight = 356;
-
-    //     var clocksSectionHeight = this._clocksSection.actor.get_height();
- 
-    //     if (this._clocksSection._clocksApp != null) {
-    //         clocksSectionHeight.length > 0 ? menuHeight += clocksSectionHeight : menuHeight += 120;
-    //         this._scrollView.actor.show();
-    //         this._clocksSection.actor.set_style('padding-left: 12px; padding-right: 20px;');
-    //     } else {
-    //         this._scrollView.actor.hide();
-    //     }
-
-    //     if (this._weatherSection._weatherClient.available) {
-    //         menuHeight += this._weatherSection.actor.get_height();
-    //     }
-
-    //     hbox.set_height(menuHeight);
-
-    // },
     override: function (format) {
         this.resetFormat();
         if (format == "") {

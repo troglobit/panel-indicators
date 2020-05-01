@@ -35,8 +35,7 @@ var VolumeIndicator = new Lang.Class({
         this._settings = Convenience.getSettings();
         this.menu.actor.add_style_class_name("aggregate-menu");
         this._volume = Main.panel.statusArea.aggregateMenu._volume;
-        // this._volume.indicators.remove_actor(this._volume._primaryIndicator);
-        this._volume.remove_actor(this._volume._primaryIndicator);
+        this._volume.indicators.remove_actor(this._volume._primaryIndicator);
         this.box.add_child(this._volume._primaryIndicator);
         Main.panel.statusArea.aggregateMenu.menu.box.remove_actor(this._volume.menu.actor);
         this.menu.box.add_actor(this._volume.menu.actor);
@@ -50,7 +49,7 @@ var VolumeIndicator = new Lang.Class({
 
         this.menu.connect("open-state-changed", (menu, isOpen) => {
             if (isOpen) {
-                this._mediaSection.actor.show();
+                this._mediaSection.show();
             }
         });
 
@@ -66,8 +65,7 @@ var VolumeIndicator = new Lang.Class({
         this.box.remove_child(this._volume._primaryIndicator);
         this.menu.box.remove_actor(this._volume.menu.actor);
         this.menu.box.remove_actor(this._mediaSection.actor);
-        // this._volume.indicators.add_actor(this._volume._primaryIndicator);
-        this._volume.add_actor(this._volume._primaryIndicator);
+        this._volume.indicators.add_actor(this._volume._primaryIndicator);
         this._mediaSection.actor.remove_style_class_name("music-box");
         Main.panel.statusArea.aggregateMenu.menu.box.add_actor(this._volume.menu.actor);
         Main.panel.statusArea.dateMenu._messageList._addSection(this._mediaSection);

@@ -37,9 +37,9 @@ var NotificationIndicator = new Lang.Class({
         this.parent("NotificationIndicator");
 
         this._messageList = Main.panel.statusArea.dateMenu._messageList;
-        // try {
-        //     this._messageList._removeSection(this._messageList._eventsSection);
-        // } catch (e) {}
+        try {
+            this._messageList._removeSection(this._messageList._eventsSection);
+        } catch (e) {}
         
 
         this._messageListParent = this._messageList.actor.get_parent();
@@ -51,7 +51,6 @@ var NotificationIndicator = new Lang.Class({
 
         this._vbox = new St.BoxLayout({
             height: 400
-            // width: 400
         });
 
         this._vbox.add(this._messageList.actor);
