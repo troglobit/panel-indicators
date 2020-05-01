@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-const { St } = imports.gi;
+const { Clutter, GLib, St } = imports.gi;
 const Lang = imports.lang;
 const Main = imports.ui.main;
 const Config = imports.misc.config;
@@ -43,18 +43,23 @@ var NetworkIndicator = new Lang.Class({
         }
 
         this._location = Main.panel.statusArea.aggregateMenu._location;
-        this._location.indicators.remove_actor(this._location._indicator);
+        // this._location.indicators.remove_actor(this._location._indicator);
+        this._location.remove_actor(this._location._indicator);
         this._location._indicator.hide();
 
         if (this._network) {
-            this._network.indicators.remove_actor(this._network._primaryIndicator);
-            this._network.indicators.remove_actor(this._network._vpnIndicator);
+            // this._network.indicators.remove_actor(this._network._primaryIndicator);
+            // this._network.indicators.remove_actor(this._network._vpnIndicator);
+            this._network.remove_actor(this._network._primaryIndicator);
+            this._network.remove_actor(this._network._vpnIndicator);
             this.box.add_child(this._network._primaryIndicator);
             this.box.add_child(this._network._vpnIndicator);
+            this._network._primaryIndicator.hide();
             this._network._vpnIndicator.hide();            
         }
 
-        this._rfkill.indicators.remove_actor(this._rfkill._indicator);
+        // this._rfkill.indicators.remove_actor(this._rfkill._indicator);
+        this._rfkill.remove_actor(this._rfkill._indicator);
         this._rfkill._indicator.hide();
 
         this._arrowIcon = new St.Icon({
@@ -92,6 +97,43 @@ var NetworkIndicator = new Lang.Class({
 
         Main.sessionMode.connect('updated', () => this._sync());
 
+        // WIRELESS MENU
+        if (this._network) {
+            this.menu.connect("open-state-changed", (menu, isOpen) => {
+                if (isOpen) {
+                    let nmdevices = Main.panel.statusArea.aggregateMenu._network._nmDevices;
+                    for (let i = 0; i < nmdevices.length; i++) {
+                        if (
+                            nmdevices[i]._delegate instanceof
+                            imports.ui.status.network.NMDeviceWireless
+                        ) {
+                            this._devicewireless = nmdevices[i]._delegate;
+                            break;
+                        }
+                    }
+                    if (this._devicewireless && Main.panel.statusArea.aggregateMenu._network._client.wireless_hardware_enabled) {
+                        this._wirelesslist = new WirelessList(
+                            this._devicewireless._client,
+                            this._devicewireless._device,
+                            this._devicewireless._settings,
+                            this.wirelessMenu
+                        );
+                        this.wirelessMenu.menu.open();
+                        this._menuclosed = this.menu.connect(
+                            "open-state-changed",
+                            (menu, isOpen) => {
+                                if (!isOpen) {
+                                    this._wirelesslist.destroy();
+                                    this._wirelesslist = null;
+                                    this.menu.disconnect(this._menuclosed);
+                                    this._menuclosed = null;
+                                }
+                            }
+                        );
+                    }
+                }
+            });
+        }
     },
     _sync: function () {
         this._arrowIcon.hide();
@@ -122,21 +164,25 @@ var NetworkIndicator = new Lang.Class({
         this.box.remove_child(this._location._indicator);
         this.menu.box.remove_actor(this._location.menu.actor);
 
-        this._location.indicators.add_actor(this._location._indicator);
+        // this._location.indicators.add_actor(this._location._indicator);
+        this._location.add_actor(this._location._indicator);
         Main.panel.statusArea.aggregateMenu.menu.box.add_actor(this._location.menu.actor);
 
         this.box.remove_child(this._rfkill._indicator);
         this.menu.box.remove_actor(this._rfkill.menu.actor);
 
-        this._rfkill.indicators.add_actor(this._rfkill._indicator);
+        // this._rfkill.indicators.add_actor(this._rfkill._indicator);
+        this._rfkill.add_actor(this._rfkill._indicator);
         Main.panel.statusArea.aggregateMenu.menu.box.add_actor(this._rfkill.menu.actor);
 
         this.box.remove_child(this._network._primaryIndicator);
         this.box.remove_child(this._network._vpnIndicator);
         this.menu.box.remove_actor(this._network.menu.actor);
 
-        this._network.indicators.add_actor(this._network._primaryIndicator);
-        this._network.indicators.add_actor(this._network._vpnIndicator);
+        // this._network.indicators.add_actor(this._network._primaryIndicator);
+        // this._network.indicators.add_actor(this._network._vpnIndicator);
+        this._network.add_actor(this._network._primaryIndicator);
+        this._network.add_actor(this._network._vpnIndicator);
         
         Main.panel.statusArea.aggregateMenu.menu.box.add_actor(this._network.menu.actor);
 
