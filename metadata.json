@@ -1,7 +1,7 @@
 {
   "name": "Panel Indicators",
   "description": "Move the Power/Network/Volume/User/Date/Notifications menus to the status area.",
-  "uuid": "panel-indicators@lvitals",
+  "uuid": "panel-indicators@leavitals",
   "version": 1,
   "shell-version": [
     "3.36",
