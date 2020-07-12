@@ -56,10 +56,6 @@ var NotificationIndicator = new Lang.Class({
         this._vbox.add(this._messageList.actor);
         this.menu.box.add(this._vbox);
 
-        try {
-            this._messageList._removeSection(this._messageList._mediaSection);
-        } catch (e) {}
-
         this.menu.connect("open-state-changed", (menu, isOpen) => {
             if (isOpen) {
                 let now = new Date();
